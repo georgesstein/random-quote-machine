@@ -9,8 +9,6 @@ type Props = {
 }
 
 export default function QuoteBox(p: Props) {
-  
-  
   return (
     <El.QuoteBox id='quote-box'>
       <El.QuoteContent baseColor={p.baseColor} animation={p.animation}>

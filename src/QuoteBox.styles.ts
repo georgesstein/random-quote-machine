@@ -17,7 +17,8 @@ export const QuoteBox = styled.div`
 export const QuoteContent = styled.div<Props>`
   opacity: ${p => (p.animation === 'fade-in' ? 1 : 0)};
   transition-property: opacity;
-  transition-duration: 1s;`
+  transition-duration: 1s;
+`
 
 export const QuoteText = styled.h1<{ baseColor: string }>`
   font-size: 1.75em;
@@ -83,5 +84,9 @@ export const NewQuoteButton = styled.button<{ baseColor: string }>`
 
   &:hover {
     opacity: 0.7;
+  }
+
+  &:disabled {
+    opacity: 0.3;
   }
 `
