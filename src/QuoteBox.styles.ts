@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-type Props = { baseColor: string; animation: 'fade-in' | 'fade-out' }
-
 export const QuoteBox = styled.div`
   width: 450px;
   height: max-content;
@@ -14,17 +12,16 @@ export const QuoteBox = styled.div`
   font-family: 'Raleway', sans-serif;
 `
 
-export const QuoteContent = styled.div<Props>`
+export const Top = styled.div<{ animation: 'fade-in' | 'fade-out'; baseColor: string }>`
   opacity: ${p => (p.animation === 'fade-in' ? 1 : 0)};
-  transition-property: opacity;
-  transition-duration: 1s;
+  color: ${p => p.baseColor};
+  transition: opacity 1s, color 1s;
 `
 
-export const QuoteText = styled.h1<{ baseColor: string }>`
+export const QuoteText = styled.h1`
   font-size: 1.75em;
   font-weight: 400;
   text-align: center;
-  color: ${p => p.baseColor};
 `
 
 export const QuoteMarks = styled.i`
@@ -37,15 +34,14 @@ export const QuoteMarks = styled.i`
   }
 `
 
-export const QuoteAuthor = styled.span<{ baseColor: string }>`
-  float: right;
+export const QuoteAuthor = styled.div`
+  text-align: right;
   font-size: 1em;
   font-weight: 100;
   margin-top: 20px;
-  color: ${p => p.baseColor};
 `
 
-export const QuoteBoxFooter = styled.div`
+export const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,8 +55,7 @@ export const TwitterLink = styled.a<{ baseColor: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: opacity 0.4s;
-
+  transition: background-color 1s;
   background-color: ${p => p.baseColor};
 
   &:hover {
@@ -79,14 +74,10 @@ export const NewQuoteButton = styled.button<{ baseColor: string }>`
   padding: 0px 30px;
   color: #fff;
   cursor: pointer;
-  transition: opacity 0.4s;
+  transition: background-color 1s;
   background-color: ${p => p.baseColor};
 
   &:hover {
     opacity: 0.7;
-  }
-
-  &:disabled {
-    opacity: 0.3;
   }
 `

@@ -7,18 +7,9 @@ export const Wrapper = styled.div<{ baseBackgroundColor: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
-
   background-color: ${p => p.baseBackgroundColor};
   transition-property: background-color;
   transition-duration: 1s;
-  
-  /* .github-link{
-    height: 40px;
-    width: 40px;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-  } */
 `
 
 export const GithubLink = styled.a`
