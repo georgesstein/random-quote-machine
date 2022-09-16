@@ -10,23 +10,23 @@ type Props = {
 
 export default function QuoteBox(p: Props) {
   return (
-    <El.QuoteBox id='quote-box'>
-      <El.QuoteContent baseColor={p.baseColor} animation={p.animation}>
-        <El.QuoteText baseColor={p.baseColor}>
+    <El.QuoteBox>
+      <El.Top animation={p.animation} baseColor={p.baseColor}>
+        <El.QuoteText>
           <El.QuoteMarks className='quotes fa fa-quote-left fa-pull-left' aria-hidden='true'></El.QuoteMarks>
           {p.quote.text}
         </El.QuoteText>
-        <El.QuoteAuthor baseColor={p.baseColor}>{p.quote.author}</El.QuoteAuthor>
-      </El.QuoteContent>
+        <El.QuoteAuthor>{p.quote.author}</El.QuoteAuthor>
+      </El.Top>
 
-      <El.QuoteBoxFooter>
+      <El.Bottom>
         <El.TwitterLink baseColor={p.baseColor} href='https://twitter.com/intent/tweet' target='_blank' rel='noreferrer'>
           <El.TwitterIcon src={twitterIcon} alt='twitter-icon' />
         </El.TwitterLink>
         <El.NewQuoteButton baseColor={p.baseColor} onClick={p.onNewQuoteButtonClick} disabled={!p.onNewQuoteButtonClick}>
           New quote
         </El.NewQuoteButton>
-      </El.QuoteBoxFooter>
+      </El.Bottom>
     </El.QuoteBox>
   )
 }

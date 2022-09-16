@@ -5,7 +5,7 @@ import QuoteMachine from './QuoteMachine'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <QuoteMachine />
-  </React.StrictMode>
+  // </React.StrictMode>
 )
