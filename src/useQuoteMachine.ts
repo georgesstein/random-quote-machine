@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-import * as BreakingBadAPI from './API'
+import * as BastiatAPI from './API'
 import { Quote } from './types'
 
 import { chooseRandomColor } from './utils'
@@ -27,6 +27,7 @@ export default function useQuoteMachine(): UseQuoteBox {
 
   const loadNewQuote = () => {
     if (state.status !== 'fetched') throw new Error('Inconsistent state')
+    
 
     setState({ status: 'loading-one-more', quote: state.quote, baseColor: chooseRandomColor(COLORS, state.baseColor) })
     setTimeout(() => loadQuote(setState), ANIMATION_DURATION)
@@ -40,7 +41,7 @@ export default function useQuoteMachine(): UseQuoteBox {
 }
 
 function loadQuote(setState: (state: UseQuoteBoxState | ((prevState: UseQuoteBoxState) => UseQuoteBoxState)) => void) {
-  BreakingBadAPI.fetchQuote()
+  BastiatAPI.fetchQuote()
     .then(quote => setState(state => ({ status: 'fetched', quote: quote, baseColor: state.baseColor })))
     .catch(error => setState({ status: 'error', errorMessage: error, baseColor: 'red' }))
 }
