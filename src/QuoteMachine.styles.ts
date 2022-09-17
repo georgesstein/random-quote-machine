@@ -21,3 +21,16 @@ export const GithubLink = styled.a`
 `
 
 export const GithubIcon = styled.img``
+
+export const EmptyPage = styled.div`
+  width: 450px;
+  height: max-content;
+  padding: 40px 50px;
+  border-radius: 3px;
+  background-color: #fff;
+  color: red;
+  font-size: 1.75em;
+  font-weight: 400;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+`

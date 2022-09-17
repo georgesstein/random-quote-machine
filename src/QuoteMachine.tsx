@@ -9,7 +9,14 @@ export default function QuoteMachine() {
   const quoteMachine = useQuoteMachine()
 
   if (quoteMachine.status === 'error') {
-    return <div>error</div>
+    return (
+      <El.Wrapper baseBackgroundColor={quoteMachine.baseColor}>
+        <El.GithubLink href='https://github.com/georgesstein/random-quote-machine' target='_blank' rel='noreferrer'>
+          <El.GithubIcon src={githubIcon} alt='github-icon' />
+        </El.GithubLink>
+        <El.EmptyPage>No quotes found</El.EmptyPage>
+      </El.Wrapper>
+    )
   }
 
   return (
