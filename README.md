@@ -7,3 +7,6 @@ npm i
 ```
 npm start
 ```
+
+# Deployed App
+https://bastiat-quotes.netlify.app
